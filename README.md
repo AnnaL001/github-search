@@ -1,5 +1,5 @@
 # GithubSearch
-
+An Angular web application that allows users to enter a GitHub username into a form, submit it and view names and descriptions of a person's public repositories. <br>
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 
 ## Development server
