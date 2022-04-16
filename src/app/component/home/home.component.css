@@ -3,3 +3,12 @@ h2 {
   padding: 4rem 0;
   text-decoration: underline;
 }
+
+div#general-info-text {
+  padding: 0 1.5rem;
+}
+
+div.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
