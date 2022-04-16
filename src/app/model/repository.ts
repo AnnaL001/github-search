@@ -3,9 +3,10 @@ export class Repository {
     public name: string,
     public description: string,
     public owner: string,
-    public languages: Array<String>,
+    public language: string,
     public branches: number,
     public forks: number,
     public commits: number,
-    public url: string){}
+    public url: string,
+    public createdAt: Date){}
 }
