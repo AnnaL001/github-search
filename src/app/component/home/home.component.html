@@ -2,11 +2,11 @@
   <div id="general-info">
     <div class="container">
       <div class="row gx-5">
-        <div class="col-12 col-md-2 mb-4 mb-md-0">
+        <div class="col-12 col-md-3 col-lg-2 mb-4 mb-md-0">
           <img src="{{user.avatar}}" alt="Github avatar">
         </div>
-        <div class="col-12 col-md-8">
-          <div class="card">
+        <div class="col-12 col-md-8 col-lg-10">
+          <div id="general-info-text" class="card">
             <div class="card-body">
               <div class="row">
                 <div class="col-6 col-lg-3">
@@ -39,10 +39,23 @@
 
   <div id="repos">
     <h2>List of repositories</h2>
-    <div class="row">
-      <div class="col-12 col-md-6 col-lg-4">
-        <div class="card">
-
+    <div class="container">
+      <div class="row gy-4">
+        <div *ngFor="let repo of user.repos" class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100">
+            <div class="card-header">
+              <h3>{{repo.name}}</h3>
+            </div>
+            <div class="card-body">
+              <p><span class="title">Description:</span>{{repo.description}}</p>
+              <p><span class="title">Language:</span>{{repo.language}}</p>
+              <p><span class="title">Forks:</span>{{repo.forks}}</p>
+            </div>
+            <div class="card-footer">
+              <p>Created: {{repo.createdAt|date}}</p>
+              <button class="btn btn-primary">View</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
