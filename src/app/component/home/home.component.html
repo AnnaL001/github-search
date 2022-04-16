@@ -1,33 +1,33 @@
 <section id="home">
   <div id="general-info">
     <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-3">
-          <img src="" alt="Github avatar">
+      <div class="row gx-5">
+        <div class="col-12 col-md-2 mb-4 mb-md-0">
+          <img src="{{user.avatar}}" alt="Github avatar">
         </div>
         <div class="col-12 col-md-8">
           <div class="card">
             <div class="card-body">
               <div class="row">
                 <div class="col-6 col-lg-3">
-                  <p><span class="title">Username:</span><br>AnnaL001</p>
+                  <p><span class="title">Username:</span><br>{{user.username}}</p>
                 </div>
                 <div class="col-6 col-lg-3">
-                  <p><span class="title">Public repo:</span><br>21</p>
+                  <p><span class="title">Public repo:</span><br>{{user.publicRepos}}</p>
                 </div>
                 <div class="col-6 col-lg-3">
-                  <p><span class="title">Followers:</span><br>4</p>
+                  <p><span class="title">Followers:</span><br>{{user.followers}}</p>
                 </div>
                 <div class="col-6 col-lg-3">
-                  <p><span class="title">Following:</span><br>4</p>
+                  <p><span class="title">Following:</span><br>{{user.following}}</p>
                 </div>
                 <div class="col-12">
-                  <p><span class="title spacing">Description:</span>Lorem ipsum dolor Lorem ipsum dolor Lorem ipsum dolor
-                    Lorem ipsum dolorLorem ipsum dolorLorem ipsum dolorLorem ipsum dolor
+                  <p><span class="title spacing">Bio:</span>
+                    {{user.bio}}
                   </p>
                 </div>
                 <div class="col-12">
-                  <p><span class="title spacing">Joined:</span>1 week ago</p>
+                  <p><span class="title spacing">Joined:</span>{{user.createdAt|date}}</p>
                 </div>
               </div>
             </div>
