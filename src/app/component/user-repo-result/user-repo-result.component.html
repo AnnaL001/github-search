@@ -1,0 +1,5 @@
+<div class="container">
+  <button class="btn btn-primary my-4" (click)="goToSearchUsers()"><i class="fa-solid fa-arrow-left"></i>Back</button>
+  <h2>List of {{user.username}}'s repositories</h2>
+</div>
+<app-repo [repos]="user.repos"></app-repo>

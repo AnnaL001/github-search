@@ -10,6 +10,7 @@ import { HomeComponent } from './component/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserGeneralInfoComponent } from './component/user-general-info/user-general-info.component';
 import { RepoComponent } from './component/repo/repo.component';
+import { UserRepoResultComponent } from './component/user-repo-result/user-repo-result.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RepoComponent } from './component/repo/repo.component';
     NavbarComponent,
     HomeComponent,
     UserGeneralInfoComponent,
-    RepoComponent
+    RepoComponent,
+    UserRepoResultComponent
   ],
   imports: [
     BrowserModule,
