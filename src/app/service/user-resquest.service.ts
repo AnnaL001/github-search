@@ -15,7 +15,7 @@ export class UserResquestService {
     this.user = new User();
   }
 
-  sendUserRequest(username: string){
+  sendUserRequest(username: string|null){
     let promise = new Promise<void>((resolve, reject) => {
       this.http.get<any>(`https://api.github.com/users/${username}?access_key=${environment.apiKey}`).toPromise().then(
         response => {
