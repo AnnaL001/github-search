@@ -12,7 +12,7 @@ export class UserResquestService {
   user: User;
 
   constructor(private http: HttpClient) {
-    this.user = new User("", "", [], 0, "", 0, 0, new Date());
+    this.user = new User();
   }
 
   sendUserRequest(username: string){
@@ -40,19 +40,8 @@ export class UserResquestService {
       this.http.get<any>(`https://api.github.com/users/${username}/repos?order=created&sort=desc?access_key=${environment.apiKey}`).toPromise().then(
         response => {
           console.log(response);
-          for(let repo of response){
-            // Map repo information to Repository instance
-            let repository = new Repository("", "", "", "", 0, 0, 0, "", new Date());
-            // TO DO: Get repo branches and commits
-            repository.name = repo.name;
-            repository.description = repo.description;
-            repository.language = repo.language;
-            repository.branches = response.branches_url;
-            repository.forks = repo.forks;
-            repository.url = repo.html_url;
-            repository.createdAt = repo.created_at;
-            this.user.repos.push(repository);
-          }
+          let repos = response.map((repo: any) => new Repository(repo.name, repo.description, repo.owner.login, repo.language, 0, repo.forks, 0, repo.html_url, repo.created_at));
+          this.user.repos = repos;
           resolve();
         },
         error => {
