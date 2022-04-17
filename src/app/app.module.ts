@@ -8,14 +8,17 @@ import { RepositoriesModule } from './repositories/repositories.module';
 import { UsersModule } from './users/users.module';
 import { HomeComponent } from './component/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LandingPageComponent } from './component/landing-page/landing-page.component';
+import { UserGeneralInfoComponent } from './component/user-general-info/user-general-info.component';
+import { RepoComponent } from './component/repo/repo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    LandingPageComponent
+    UserGeneralInfoComponent,
+    RepoComponent,
+
   ],
   imports: [
     BrowserModule,
