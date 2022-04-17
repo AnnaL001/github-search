@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Input } from '../model/input';
 import { User } from '../model/user';
 import { UserResquestService } from '../service/user-resquest.service';
 
@@ -15,9 +16,8 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchUser(username: string){
-    this.user = {} as User;
-    this.userService.sendUserRequest(username);
+  searchUser(input: Input){
+    this.userService.sendUserRequest(input.name);
     this.user = this.userService.user;
   }
 
