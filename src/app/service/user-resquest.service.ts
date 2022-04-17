@@ -12,10 +12,11 @@ export class UserResquestService {
   user: User;
 
   constructor(private http: HttpClient) {
-    this.user = new User();
+    this.user = new User("", "", 0, "", 0, 0, new Date(), []);
   }
 
   sendUserRequest(username: string|null){
+    this.user = {} as User; // Clear previous input
     let promise = new Promise<void>((resolve, reject) => {
       this.http.get<any>(`https://api.github.com/users/${username}?access_key=${environment.apiKey}`).toPromise().then(
         response => {
