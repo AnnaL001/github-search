@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { Input } from 'src/app/model/input';
 import { User } from 'src/app/model/user';
 
 @Component({
@@ -8,19 +9,18 @@ import { User } from 'src/app/model/user';
 })
 export class SearchUserComponent implements OnInit {
 
-  user = {} as User;
-  username = "";
-  @Output() inputUsername = new EventEmitter<string>();
+  formInput = {} as Input;
+  @Output() inputUsername = new EventEmitter<Input>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  submitUsername(username: string){
-    this.username = username
-    this.inputUsername.emit(this.username);
-    console.log(this.username);
+  submitUsername(input: Input){
+    this.formInput.name = input.name
+    this.inputUsername.emit(this.formInput);
+    console.log(this.formInput);
   }
 
 }
