@@ -35,7 +35,7 @@ p.card-text {
   font-size: 1rem;
 }
 
-div.card-footer {
+div.card-footer{
   display: flex;
   justify-content: space-between;
 }
@@ -44,7 +44,7 @@ div.card-header {
   display: flex;
 }
 
-div.card, button.btn {
+div.card, button.btn, input.form-control {
   border-radius: 0.4rem;
 }
 
@@ -55,4 +55,16 @@ button.btn {
 p.footer-text {
   margin-top: 0.3rem;
 }
+
+button#search-btn {
+  padding: 1rem;
+}
+
+@media screen and (max-width: 576px) {
+  button#search-btn {
+    display: block;
+    margin: 1rem auto;
+  }
+}
+
 
