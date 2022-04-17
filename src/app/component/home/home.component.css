@@ -8,7 +8,8 @@ div#general-info-text {
   padding: 0 1.5rem;
 }
 
-div.card-footer {
-  display: flex;
-  justify-content: space-between;
+i {
+  font-size: 1.5rem;
+  margin-right: 0.4rem;
 }
+

@@ -26,9 +26,33 @@ img {
 }
 
 h3 {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 500;
+  padding-top: 0.2rem;
 }
 
+p.card-text {
+  font-size: 1rem;
+}
 
+div.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.card-header {
+  display: flex;
+}
+
+div.card, button.btn {
+  border-radius: 0.4rem;
+}
+
+button.btn {
+  font-size: 1rem;
+}
+
+p.footer-text {
+  margin-top: 0.3rem;
+}
 
