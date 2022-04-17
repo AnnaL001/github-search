@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from 'src/app/model/user';
 
 @Component({
   selector: 'app-user-result',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserResultComponent implements OnInit {
 
-  constructor() { }
+  @Input() user = {} as User;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  goToRepoList(username: string){
+    this.router.navigate(['/users', username]);
+  }
 }

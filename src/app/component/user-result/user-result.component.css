@@ -1,0 +1,19 @@
+div#users {
+  padding: 3rem 0;
+}
+
+div.card {
+  width: 93%
+}
+
+@media screen and (max-width: 576px) {
+  div.card {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  div.card {
+    width: 100%;
+  }
+}

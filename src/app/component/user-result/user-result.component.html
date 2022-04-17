@@ -1,1 +1,44 @@
-<p>user-result works!</p>
+<div id="users">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <div class="row gx-5">
+          <div class="col-12 col-md-3 col-lg-2 mb-4 mb-md-0">
+            <img src="{{user.avatar}}" alt="Github avatar">
+          </div>
+          <div class="col-12 col-md-7 col-lg-8">
+            <div id="general-info-text">
+              <div class="card-body">
+                <div class="row gy-3">
+                  <div class="col-6 col-lg-3">
+                    <p class="card-text"><span class="title">Username:</span><br>{{user.username}}</p>
+                  </div>
+                  <div class="col-6 col-lg-3">
+                    <p class="card-text"><span class="title">Public repo:</span><br>{{user.publicRepos}}</p>
+                  </div>
+                  <div class="col-6 col-lg-3">
+                    <p class="card-text"><span class="title">Followers:</span><br>{{user.followers}}</p>
+                  </div>
+                  <div class="col-6 col-lg-3">
+                    <p class="card-text"><span class="title">Following:</span><br>{{user.following}}</p>
+                  </div>
+                  <div class="col-12">
+                    <p class="card-text"><span class="title spacing">Bio:</span>
+                      {{user.bio}}
+                    </p>
+                  </div>
+                  <div class="col-12">
+                    <p class="card-text"><span class="title spacing">Joined:</span>{{user.createdAt|date}}</p>
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary" (click)="goToRepoList(user.username)">View repositories</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
