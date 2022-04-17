@@ -17,8 +17,7 @@ import { RepoComponent } from './component/repo/repo.component';
     NavbarComponent,
     HomeComponent,
     UserGeneralInfoComponent,
-    RepoComponent,
-
+    RepoComponent
   ],
   imports: [
     BrowserModule,
