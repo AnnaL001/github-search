@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/model/user';
-import { UserResquestService } from 'src/app/service/user-resquest.service';
+import { UserRequestService } from 'src/app/service/user-request.service';
 
 @Component({
   selector: 'app-user-repo-result',
@@ -11,7 +11,7 @@ import { UserResquestService } from 'src/app/service/user-resquest.service';
 export class UserRepoResultComponent implements OnInit {
 
   user = {} as User;
-  constructor(private route: ActivatedRoute, private router: Router, private userService: UserResquestService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private userService: UserRequestService) { }
 
   ngOnInit(): void {
     let username = this.route.snapshot.paramMap.get('username');
