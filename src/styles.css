@@ -32,6 +32,12 @@ h3 {
   padding-top: 0.2rem;
 }
 
+span.highlight {
+  font-size: 1rem;
+  padding-top: 0.2rem;
+  margin-left: auto;
+}
+
 p.card-text {
   font-size: 1rem;
 }
@@ -57,7 +63,7 @@ p.footer-text {
   margin-top: 0.3rem;
 }
 
-button#search-btn {
+button.search-btn {
   padding: 1rem;
 }
 
