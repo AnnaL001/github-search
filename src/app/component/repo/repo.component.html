@@ -1,24 +1,48 @@
 <div id="repos">
   <div class="container">
+    <ngx-ui-loader></ngx-ui-loader>
     <div class="row gy-4">
       <div *ngFor="let repo of repos" class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100">
-          <div class="card-header">
-            <i class="fa-brands fa-github-square text-primary"></i>
-            <h3 class="card-title">{{repo.name}}</h3>
+        <div *ngIf="repo.forks > 0 && repo.forks === getHighestForks(repos) then featured else normal"></div>
+        <ng-template #featured>
+          <div appHighlight class="card h-100">
+            <div class="card-header">
+              <i class="fa-brands fa-github-square text-primary"></i>
+              <h3 class="card-title">{{repo.name}}</h3>
+              <span class="text-primary highlight">Most forked</span>
+            </div>
+            <div class="card-body">
+              <p class="card-text"><span class="title">Description:</span>{{repo.description}}</p>
+              <p class="card-text"><span class="title">Language:</span>{{repo.language}}</p>
+              <p class="card-text"><span class="title">Forks:</span>{{repo.forks}}</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text footer-text">Created: {{repo.createdAt|datePassed}}</p>
+              <a href="{{repo.url}}">
+                <button class="btn btn-primary">View</button>
+              </a>
+            </div>
           </div>
-          <div class="card-body">
-            <p class="card-text"><span class="title">Description:</span>{{repo.description}}</p>
-            <p class="card-text"><span class="title">Language:</span>{{repo.language}}</p>
-            <p class="card-text"><span class="title">Forks:</span>{{repo.forks}}</p>
+        </ng-template>
+        <ng-template #normal>
+          <div class="card h-100">
+            <div class="card-header">
+              <i class="fa-brands fa-github-square text-primary"></i>
+              <h3 class="card-title">{{repo.name}}</h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text"><span class="title">Description:</span>{{repo.description}}</p>
+              <p class="card-text"><span class="title">Language:</span>{{repo.language}}</p>
+              <p class="card-text"><span class="title">Forks:</span>{{repo.forks}}</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text footer-text">Created: {{repo.createdAt|datePassed}}</p>
+              <a href="{{repo.url}}">
+                <button class="btn btn-primary">View</button>
+              </a>
+            </div>
           </div>
-          <div class="card-footer">
-            <p class="card-text footer-text">Created: {{repo.createdAt|date}}</p>
-            <a href="{{repo.url}}">
-              <button class="btn btn-primary">View</button>
-            </a>
-          </div>
-        </div>
+        </ng-template>
       </div>
     </div>
   </div>
