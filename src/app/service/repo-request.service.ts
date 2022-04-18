@@ -17,7 +17,7 @@ export class RepoRequestService {
       this.http.get<any>(`https://api.github.com/search/repositories?q=${repoName}+in:name?order=created_at&sort=desc?access_key=${environment.apiKey}`).toPromise().then(
         response => {
           console.log(response);
-          this.repositories = response.items.map((repo: any) => new Repository(repo.name, repo.description, repo.owner.login, repo.language, repo.branches, repo.forks, repo.commits, repo.html_url, repo.created_at));
+          this.repositories = response.items.map((repo: any) => new Repository(repo.name, repo.description, repo.owner.login, repo.language, repo.forks, repo.html_url, repo.created_at));
           resolve();
         },
         error => {
