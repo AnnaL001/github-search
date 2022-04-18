@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/model/user';
-import { UserResquestService } from 'src/app/service/user-resquest.service';
+import { UserRequestService } from 'src/app/service/user-request.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   username = "AnnaL001";
   user = {} as User;
-  constructor(private userService: UserResquestService) { }
+  constructor(private userService: UserRequestService) { }
 
   ngOnInit(): void {
     this.userService.sendUserRequest(this.username);
