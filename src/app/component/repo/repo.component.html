@@ -1,6 +1,6 @@
 <div id="repos">
   <div class="container">
-    <ngx-ui-loader></ngx-ui-loader>
+    <ngx-ui-loader [loaderId]="'loader-01'"></ngx-ui-loader>
     <div class="row gy-4">
       <div *ngFor="let repo of repos" class="col-12 col-md-6 col-lg-4">
         <div *ngIf="repo.forks > 0 && repo.forks === getHighestForks(repos) then featured else normal"></div>
