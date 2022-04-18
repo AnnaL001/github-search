@@ -1,0 +1,21 @@
+<form #repoForm="ngForm" (ngSubmit)="submitRepoName(input); repoForm.reset()">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-11">
+        <div class="form-floating">
+          <input class="form-control" type="search" name="repoName" #repoName="ngModel" [(ngModel)]="input.name"
+            id="repoName" placeholder="Search by repository name" required>
+          <label for="repoName">Enter github repository name</label>
+          <div [hidden]="repoName.valid || repoName.pristine">
+            <small *ngIf="repoName.errors?.['required']" class="text-danger">Repository name is required</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-1">
+        <button type="submit" [disabled]="repoForm.invalid" class="btn btn-primary search-btn">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

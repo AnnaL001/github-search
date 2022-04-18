@@ -1,15 +1,15 @@
-<form action="#" #userForm="ngForm" (ngSubmit)="submitUsername(formInput); userForm.reset()">
+<form #userForm="ngForm" (ngSubmit)="submitUsername(formInput); userForm.reset()">
   <div class="container">
     <div class="row">
-      <div class="form-floating col-12 col-md-10">
+      <div class="form-floating col-12 col-md-11">
         <input class="form-control" type="search" name="username" [(ngModel)]="formInput.name" #username="ngModel" id="user" placeholder="Search by username" required>
         <label for="user">Enter github username</label>
         <div [hidden]="username.valid || username.pristine">
           <small *ngIf="username.errors?.['required']" class="text-danger">Username is required</small>
         </div>
       </div>
-      <div class="col-12 col-md-2">
-        <button [disabled]="userForm.invalid" type="submit" id="search-btn" class="btn btn-primary">
+      <div class="col-12 col-md-1">
+        <button [disabled]="userForm.invalid" type="submit" class="btn btn-primary search-btn">
           Search
         </button>
       </div>
