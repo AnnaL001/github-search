@@ -42,7 +42,7 @@ export class UserRequestService {
       this.http.get<any>(`https://api.github.com/users/${username}/repos?order=created&sort=desc?access_key=${environment.apiKey}`).toPromise().then(
         response => {
           console.log(response);
-          let repos = response.map((repo: any) => new Repository(repo.name, repo.description, repo.owner.login, repo.language, 0, repo.forks, 0, repo.html_url, repo.created_at));
+          let repos = response.map((repo: any) => new Repository(repo.name, repo.description, repo.owner.login, repo.language, repo.forks, repo.html_url, repo.created_at));
           this.user.repos = repos;
           resolve();
         },
