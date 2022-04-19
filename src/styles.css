@@ -51,7 +51,7 @@ div.card-header {
   display: flex;
 }
 
-div.card, button.btn, input.form-control {
+div.card, button.btn, input.form-control, div.alert {
   border-radius: 0.4rem;
 }
 
