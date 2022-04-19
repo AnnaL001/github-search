@@ -6,7 +6,7 @@ div.card {
   width: 93%
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 767px) {
   div.card {
     width: 100%;
   }
