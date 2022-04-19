@@ -14,7 +14,6 @@ export class DatePassedPipe implements PipeTransform {
 
     // Get date difference in seconds
     let dateDifference = (todayWithNoTime - inputDate) * 0.001;
-    console.log(inputDate);
     let dateCount = '';
 
     if(dateDifference <= 59) {
