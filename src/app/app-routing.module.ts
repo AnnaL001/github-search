@@ -4,6 +4,7 @@ import { HomeComponent } from './component/home/home.component';
 import { UserRepoResultComponent } from './component/user-repo-result/user-repo-result.component';
 import { RepositoriesComponent } from './component/repositories/repositories.component';
 import { UsersComponent } from './component/users/users.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'repositories',
     component: RepositoriesComponent
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
   }
 ];
 
