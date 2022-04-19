@@ -9,5 +9,6 @@ export class User {
     public followers: number,
     public following: number,
     public createdAt: Date,
-    public repos: Array<Repository>){}
+    public repos: Array<Repository>,
+    public profileUrl: string){}
 }
