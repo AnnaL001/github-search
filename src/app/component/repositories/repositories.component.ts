@@ -16,9 +16,13 @@ export class RepositoriesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchRepo(input: Input){
-    this.repoService.sendRepoRequest(input.name);
-    this.repos = this.repoService.repositories;
+  async searchRepo(input: Input){
+    try {
+      await this.repoService.sendRepoRequest(input.name);
+      this.repos = this.repoService.repositories;
+    } catch(error){
+      console.log("An error was encountered", error);
+    }
   }
 
 }
