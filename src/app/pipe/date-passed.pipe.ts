@@ -19,17 +19,41 @@ export class DatePassedPipe implements PipeTransform {
     if(dateDifference <= 59) {
       dateCount = `seconds ago`;
     } else if (dateDifference >= 60 && dateDifference < 3600){
-      dateCount = `${Math.floor(dateDifference/60)} minutes ago`;
+      if(Math.floor(dateDifference/60) === 1){
+        dateCount = `${Math.floor(dateDifference/60)} minute ago`;
+      } else {
+        dateCount = `${Math.floor(dateDifference/60)} minutes ago`;
+      }
     } else if (dateDifference >= 3600 && dateDifference < 86400){
-      dateCount = `${Math.floor(dateDifference/3600)} hours ago`;
+      if(Math.floor(dateDifference/3600) === 1){
+        dateCount = `${Math.floor(dateDifference/3600)} hour ago`;
+      } else {
+        dateCount = `${Math.floor(dateDifference/3600)} hours ago`;
+      }
     } else if (dateDifference >= 86400 && dateDifference < 604800){
-      dateCount = `${Math.floor(dateDifference/86400)} days ago`;
+      if(Math.floor(dateDifference/86400) === 1){
+        dateCount = `${Math.floor(dateDifference/86400)} day ago`;
+      } else {
+        dateCount = `${Math.floor(dateDifference/86400)} days ago`;
+      }
     } else if (dateDifference >= 604800 && dateDifference < 2629743){
-      dateCount = `${Math.floor(dateDifference/604800)} weeks ago`;
+      if(Math.floor(dateDifference/604800) === 1){
+        dateCount = `${Math.floor(dateDifference/604800)} week ago`;
+      } else {
+        dateCount = `${Math.floor(dateDifference/604800)} weeks ago`;
+      }
     } else if (dateDifference >= 2629743 && dateDifference < 31556926){
-      dateCount = `${Math.floor(dateDifference/2629743)} months ago`;
+      if(Math.floor(dateDifference/2629743) === 1){
+        dateCount = `${Math.floor(dateDifference/2629743)} month ago`;
+      } else {
+        dateCount = `${Math.floor(dateDifference/2629743)} months ago`;
+      }
     } else {
-      dateCount = `${Math.floor(dateDifference/31556926)} years ago`;
+      if(Math.floor(dateDifference/31556926) === 1){
+        dateCount = `${Math.floor(dateDifference/31556926)} year ago`;
+      } else {
+        dateCount = `${Math.floor(dateDifference/31556926)} years ago`;
+      }
     }
     return dateCount;
   }
