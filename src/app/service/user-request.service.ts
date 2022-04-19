@@ -13,7 +13,7 @@ export class UserRequestService {
   user: User;
 
   constructor(private http: HttpClient) {
-    this.user = new User("", "", 0, "", 0, 0, new Date(), []);
+    this.user = new User("", "", 0, "", 0, 0, new Date(), [], "");
   }
 
   sendUserRequest(username: string|null){
@@ -30,6 +30,7 @@ export class UserRequestService {
           this.user.followers = response.followers;
           this.user.following = response.following;
           this.user.createdAt = response.created_at;
+          this.user.profileUrl = response.html_url;
           console.log(this.user);
           resolve();
         },
