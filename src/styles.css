@@ -67,11 +67,12 @@ button.search-btn {
   padding: 1rem;
 }
 
-@media screen and (max-width: 576px) {
-  button#search-btn {
+@media screen and (max-width: 767px) {
+  button.search-btn {
     display: block;
     margin: 1rem auto;
   }
 }
+
 
 
