@@ -14,45 +14,54 @@ export class DatePassedPipe implements PipeTransform {
 
     // Get date difference in seconds
     let dateDifference = (todayWithNoTime - inputDate) * 0.001;
+    // Seconds in different intervals
+    const seconds = {
+      min: 60,
+      hour: 3600,
+      day: 86400,
+      week: 604800,
+      month: 2629743,
+      year: 31556926
+    }
     let dateCount = '';
 
-    if(dateDifference <= 59) {
+    if(dateDifference < seconds.min) {
       dateCount = `seconds ago`;
-    } else if (dateDifference >= 60 && dateDifference < 3600){
-      if(Math.floor(dateDifference/60) === 1){
-        dateCount = `${Math.floor(dateDifference/60)} minute ago`;
+    } else if (dateDifference >= seconds.min && dateDifference < seconds.hour){
+      if(Math.floor(dateDifference/seconds.min) === 1){
+        dateCount = `${Math.floor(dateDifference/seconds.min)} minute ago`;
       } else {
-        dateCount = `${Math.floor(dateDifference/60)} minutes ago`;
+        dateCount = `${Math.floor(dateDifference/seconds.min)} minutes ago`;
       }
-    } else if (dateDifference >= 3600 && dateDifference < 86400){
-      if(Math.floor(dateDifference/3600) === 1){
-        dateCount = `${Math.floor(dateDifference/3600)} hour ago`;
+    } else if (dateDifference >= seconds.hour && dateDifference < seconds.day){
+      if(Math.floor(dateDifference/seconds.hour) === 1){
+        dateCount = `${Math.floor(dateDifference/seconds.hour)} hour ago`;
       } else {
-        dateCount = `${Math.floor(dateDifference/3600)} hours ago`;
+        dateCount = `${Math.floor(dateDifference/seconds.hour)} hours ago`;
       }
-    } else if (dateDifference >= 86400 && dateDifference < 604800){
-      if(Math.floor(dateDifference/86400) === 1){
-        dateCount = `${Math.floor(dateDifference/86400)} day ago`;
+    } else if (dateDifference >= seconds.day && dateDifference < seconds.week){
+      if(Math.floor(dateDifference/seconds.day) === 1){
+        dateCount = `${Math.floor(dateDifference/seconds.day)} day ago`;
       } else {
-        dateCount = `${Math.floor(dateDifference/86400)} days ago`;
+        dateCount = `${Math.floor(dateDifference/seconds.day)} days ago`;
       }
-    } else if (dateDifference >= 604800 && dateDifference < 2629743){
-      if(Math.floor(dateDifference/604800) === 1){
-        dateCount = `${Math.floor(dateDifference/604800)} week ago`;
+    } else if (dateDifference >= seconds.week && dateDifference < seconds.month){
+      if(Math.floor(dateDifference/seconds.week) === 1){
+        dateCount = `${Math.floor(dateDifference/seconds.week)} week ago`;
       } else {
-        dateCount = `${Math.floor(dateDifference/604800)} weeks ago`;
+        dateCount = `${Math.floor(dateDifference/seconds.week)} weeks ago`;
       }
-    } else if (dateDifference >= 2629743 && dateDifference < 31556926){
-      if(Math.floor(dateDifference/2629743) === 1){
-        dateCount = `${Math.floor(dateDifference/2629743)} month ago`;
+    } else if (dateDifference >= seconds.month && dateDifference < seconds.year){
+      if(Math.floor(dateDifference/seconds.month) === 1){
+        dateCount = `${Math.floor(dateDifference/seconds.month)} month ago`;
       } else {
-        dateCount = `${Math.floor(dateDifference/2629743)} months ago`;
+        dateCount = `${Math.floor(dateDifference/seconds.month)} months ago`;
       }
     } else {
-      if(Math.floor(dateDifference/31556926) === 1){
-        dateCount = `${Math.floor(dateDifference/31556926)} year ago`;
+      if(Math.floor(dateDifference/seconds.year) === 1){
+        dateCount = `${Math.floor(dateDifference/seconds.year)} year ago`;
       } else {
-        dateCount = `${Math.floor(dateDifference/31556926)} years ago`;
+        dateCount = `${Math.floor(dateDifference/seconds.year)} years ago`;
       }
     }
     return dateCount;
