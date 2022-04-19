@@ -20,7 +20,6 @@ export class SearchUserComponent implements OnInit {
   submitUsername(input: Input){
     this.formInput.name = input.name
     this.inputUsername.emit(this.formInput);
-    console.log(this.formInput);
   }
 
 }

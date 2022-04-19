@@ -21,7 +21,6 @@ export class UserRequestService {
     let promise = new Promise<void>((resolve, reject) => {
       this.http.get<any>(`https://api.github.com/users/${username}?access_key=${environment.apiKey}`).toPromise().then(
         response => {
-          console.log(response);
           // Map user information to user instance
           this.user.username = response.login;
           this.user.avatar = response.avatar_url;
@@ -31,7 +30,6 @@ export class UserRequestService {
           this.user.following = response.following;
           this.user.createdAt = response.created_at;
           this.user.profileUrl = response.html_url;
-          console.log(this.user);
           resolve();
         },
         error => {
@@ -42,7 +40,6 @@ export class UserRequestService {
       // Fetch a user's repos
       this.http.get<any>(`https://api.github.com/users/${username}/repos?order=created&sort=desc?access_key=${environment.apiKey}`).toPromise().then(
         response => {
-          console.log(response);
           let repos = response.map((repo: any) => new Repository(repo.name, repo.description, repo.owner.login, repo.language, repo.forks, repo.html_url, repo.created_at));
           this.user.repos = repos;
           resolve();

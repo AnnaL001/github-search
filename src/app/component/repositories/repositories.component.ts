@@ -19,7 +19,6 @@ export class RepositoriesComponent implements OnInit {
   searchRepo(input: Input){
     this.repoService.sendRepoRequest(input.name);
     this.repos = this.repoService.repositories;
-    console.log(this.repoService.repositories);
   }
 
 }

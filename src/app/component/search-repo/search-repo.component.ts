@@ -18,7 +18,6 @@ export class SearchRepoComponent implements OnInit {
   submitRepoName(repo: Input){
     this.input.name = repo.name;
     this.repoName.emit(this.input);
-    console.log(this.input);
   }
 
 }
