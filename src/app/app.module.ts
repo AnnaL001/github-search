@@ -18,6 +18,7 @@ import { DatePassedPipe } from './pipe/date-passed.pipe';
 import { HighlightDirective } from './directive/highlight.directive';
 import { FormsModule } from '@angular/forms';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { NotFoundComponent } from './component/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
     SearchUserComponent,
     UserResultComponent,
     DatePassedPipe,
-    HighlightDirective
+    HighlightDirective,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
