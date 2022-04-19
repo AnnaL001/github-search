@@ -16,9 +16,13 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  searchUser(input: Input){
-    this.userService.sendUserRequest(input.name);
-    this.user = this.userService.user;
+  async searchUser(input: Input){
+    try {
+      await this.userService.sendUserRequest(input.name);
+      this.user = this.userService.user;
+    } catch(error){
+      console.log("An error has occurred",error);
+    }
   }
 
   isEmpty(user: User){
